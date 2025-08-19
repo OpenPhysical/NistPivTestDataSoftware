@@ -1,0 +1,1 @@
+The CMS Signed Data object encapsulating the LDS Security Object is created and shows a SignedData version of 1.  This is incorrect and should be version 3, as per RFC 3369.

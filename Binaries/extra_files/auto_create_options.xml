@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><auto_create_options name="document">
+	<MainPane OutputDirectory="./generated_data" SampleCount="1">
+	</MainPane>
+	<DataPane name="KeyStore" type="gov.nist.piv.auto_create.KeyStorePane">
+		<DataManager header="KeyStore" type="gov.nist.piv.auto_create.CertificateManager">
+			<KeyStoreType>JKS</KeyStoreType>
+			<KeyStorePath>.\extra_files\jks_keystore</KeyStorePath>
+			
+			<CertificateAlias>pivtestca</CertificateAlias>
+			<ContentSignerAlias>pivtestsigner</ContentSignerAlias>
+			
+		</DataManager>
+	</DataPane>
+	<DataPane name="CHUID" type="gov.nist.piv.auto_create.CHUIDPane">
+		<DataManager header="FASC-N" maxLength="25" minLength="25" removeWhitespace="true" type="gov.nist.piv.auto_create.ListManager">
+			<description>White space will be removed from FASC-N.</description>
+			<values>
+				<value>D6501858210C2D3171B525A1685A08C92ADE0A6186501843E2</value>
+			</values>
+		</DataManager>
+		<DataManager header="GUID" maxLength="16" minLength="16" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>1234567890123456</value>
+			</values>
+		</DataManager>
+		<DataManager header="Expiration Date" maxLength="8" minLength="8" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>YYYMMDD format</description>
+			<values>
+				<value>20090824</value>
+			</values>
+		</DataManager>
+	</DataPane>
+	<DataPane name="CCC" type="gov.nist.piv.auto_create.CCCPane">
+		<DataManager header="Card ID" maxLength="21" minLength="21" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>123456789012345678901</value>
+			</values>
+		</DataManager>
+	</DataPane>
+	<DataPane name="Certificates" type="gov.nist.piv.auto_create.CertificatesPane">
+		<DataManager header="Cert Serial Number" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>1</value>
+			</values>
+		</DataManager>
+		<DataManager header="Valid from" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>Time and date that begins the validity of the certificate.  YYYYMMDDhhmmss</description>
+			<values>
+				<value>20070419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Valid to" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>Time and date that the the certificate expires.  YYYYMMDDhhmmss</description>
+			<values>
+				<value>20090419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Public Key File" type="gov.nist.piv.auto_create.PathManager">
+			<description>Path to the public key data.</description>
+			<values>
+				<value>.\extra_files\publicKey</value>
+			</values>
+		</DataManager>
+		<DataManager header="Common Name" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>common_name - PIV Test</value>
+			</values>
+		</DataManager>
+		<DataManager header="Organization" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>U.S. Government</value>
+			</values>
+		</DataManager>
+		<DataManager header="Organizational Unit" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>organizational Unit - PIV Test</value>
+			</values>
+		</DataManager>
+		<DataManager header="Country" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>US</value>
+			</values>
+		</DataManager>
+		<DataManager header="CRL http URI" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>http://fictitious.nist.gov/fictitiousCRLdirectory/fictitiousCRL1.crl</value>
+			</values>
+		</DataManager>
+		<DataManager header="CRL ldap URI" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>ldap://smime2.nist.gov/cn=Good%20CA,o=Test%20Certificates,c=US?certificateRevocationList</value>
+			</values>
+		</DataManager>
+		<DataManager header="Authority Info Access http URI" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>http://fictitious.nist.gov/fictitiousCertsOnlyCMSdirectory/certsIssuedToGoodCA.p7c</value>
+			</values>
+		</DataManager>
+		<DataManager header="Authority Info Access ldap URI" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>ldap://smime2.nist.gov/cn=Good%20CA,o=Test%20Certificates,c=US?cACertificate,crossCertificatePair</value>
+			</values>
+		</DataManager>
+		<DataManager header="Authority Info Access ocsp URI" maxLength="-1" minLength="0" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>http://fictitious.nist.gov/fictitiousOCSPLocation/</value>
+			</values>
+		</DataManager>
+	</DataPane>
+	<DataPane name="Fingerprint" type="gov.nist.piv.auto_create.FingerprintPane">
+		<DataManager header="Fingerprint Data" type="gov.nist.piv.auto_create.PathManager">
+			<description>Path to the fingerprint data.</description>
+			<values>
+				<value>.\extra_files\minutiae</value>
+			</values>
+		</DataManager>
+		<DataManager header="Creation Date" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>The date this file was created.  (YYYYMMDDhhmmss)</description>
+			<values>
+				<value>20070419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Validity Start Date" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>The date at which this biometric becomes useable.  YYYYMMDDhhmmss</description>
+			<values>
+				<value>20070419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Months Valid" maxLength="2" minLength="2" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>Number of months valid</description>
+			<values>
+				<value>48</value>
+			</values>
+		</DataManager>
+	</DataPane>
+	<DataPane name="Facial Image" type="gov.nist.piv.auto_create.FacialImagePane">
+		<DataManager header="Facial Image Data" type="gov.nist.piv.auto_create.PathManager">
+			<description>Path to the facial image data.</description>
+			<values>
+				<value>.\extra_files\facial_image</value>
+			</values>
+		</DataManager>
+		<DataManager header="Creation Date" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>The date this file was created.  (YYYYMMDDhhmmss)</description>
+			<values>
+				<value>20070419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Validity Start Date" maxLength="14" minLength="14" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>The date at which this biometric becomes useable.  YYYYMMDDhhmmss</description>
+			<values>
+				<value>20070419112233</value>
+			</values>
+		</DataManager>
+		<DataManager header="Months Valid" maxLength="2" minLength="2" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description>Number of months valid</description>
+			<values>
+				<value>48</value>
+			</values>
+		</DataManager>
+	</DataPane>
+	<DataPane name="PrintedInformation" type="gov.nist.piv.auto_create.PrintedInformationPane">
+		<DataManager header="Printed Name" maxLength="32" minLength="32" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>123456789012345678901 - PIV Test</value>
+			</values>
+		</DataManager>
+		<DataManager header="Employee Affiliation Line 1" maxLength="20" minLength="20" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>12345678901234567890</value>
+			</values>
+		</DataManager>
+		<DataManager header="Employee Affiliation Line 2" maxLength="20" minLength="20" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>12345678901234567890</value>
+			</values>
+		</DataManager>
+		<DataManager header="Expiration Date" maxLength="9" minLength="9" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>2008AUG24</value>
+			</values>
+		</DataManager>
+		<DataManager header="Card Serial Number" maxLength="10" minLength="10" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>1234567890</value>
+			</values>
+		</DataManager>
+		<DataManager header="Issuer Identification" maxLength="15" minLength="15" removeWhitespace="false" type="gov.nist.piv.auto_create.ListManager">
+			<description/>
+			<values>
+				<value>123456789012345</value>
+			</values>
+		</DataManager>
+	</DataPane>
+</auto_create_options>

@@ -1,0 +1,11 @@
+# Build artifacts
+build/
+*.jar.backup
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
