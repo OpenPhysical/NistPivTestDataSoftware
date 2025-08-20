@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+PIV Test Data Generator Logging Configuration
+
+User Configuration:
+- Edit log levels by changing the "level" attribute in the <Logger> sections below
+- Available levels: TRACE, DEBUG, INFO, WARN, ERROR
+- Log files are created in the "logs/" directory
+
+Common configurations:
+- For verbose debugging: Set Root level="DEBUG" 
+- For quiet operation: Set Root level="WARN"
+- For crypto debugging: Set com.tvec.utility.Crypto level="DEBUG"
+-->
+<Configuration status="WARN">
+    <Properties>
+        <!-- User-configurable properties -->
+        <Property name="log.level.root">${sys:jpiv.log.level:-INFO}</Property>
+        <Property name="log.level.app">${sys:jpiv.log.level.app:-INFO}</Property>
+        <Property name="log.level.crypto">${sys:jpiv.log.level.crypto:-WARN}</Property>
+        <Property name="log.level.debug">${sys:jpiv.log.level.debug:-DEBUG}</Property>
+    </Properties>
+    
+    <Appenders>
+        <!-- Console Appender - only shows INFO and above by default -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"/>
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+        
+        <!-- Main application log file -->
+        <RollingFile name="MainLog" fileName="logs/jpiv.log" 
+                     filePattern="logs/jpiv-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="50MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+        
+        <!-- Debug log file - captures all debug information -->
+        <RollingFile name="DebugLog" fileName="logs/jpiv-debug.log" 
+                     filePattern="logs/jpiv-debug-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+        
+        <!-- Error log file - only errors and warnings -->
+        <RollingFile name="ErrorLog" fileName="logs/jpiv-error.log" 
+                     filePattern="logs/jpiv-error-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    
+    <Loggers>
+        <!-- PIV Application Loggers -->
+        <Logger name="gov.nist.piv" level="${log.level.app}" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MainLog"/>
+            <AppenderRef ref="ErrorLog"/>
+        </Logger>
+        
+        <!-- Auto Create Package (Sample Generation) -->
+        <Logger name="gov.nist.piv.auto_create" level="${log.level.debug}" additivity="false">
+            <AppenderRef ref="DebugLog"/>
+            <AppenderRef ref="ErrorLog"/>
+        </Logger>
+        
+        <!-- Cryptographic utilities -->
+        <Logger name="com.tvec.utility.Crypto" level="${log.level.crypto}" additivity="false">
+            <AppenderRef ref="DebugLog"/>
+            <AppenderRef ref="ErrorLog"/>
+        </Logger>
+        
+        <!-- Utility classes -->
+        <Logger name="com.tvec.utility" level="INFO" additivity="false">
+            <AppenderRef ref="MainLog"/>
+            <AppenderRef ref="ErrorLog"/>
+        </Logger>
+        
+        <!-- OutputList Debug (GUI console output) -->
+        <Logger name="com.tvec.utility.displays.output.OutputList" level="DEBUG" additivity="false">
+            <AppenderRef ref="DebugLog"/>
+        </Logger>
+        
+        <!-- Third-party libraries (reduce verbosity) -->
+        <Logger name="org.bouncycastle" level="WARN"/>
+        <Logger name="org.apache.logging" level="WARN"/>
+        
+        <!-- Root Logger - catches all other logging -->
+        <Root level="${log.level.root}">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="MainLog"/>
+            <AppenderRef ref="ErrorLog"/>
+        </Root>
+    </Loggers>
+</Configuration>

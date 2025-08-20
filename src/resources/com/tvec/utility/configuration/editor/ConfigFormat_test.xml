@@ -1,0 +1,239 @@
+ECK_additional_general_authenticate_tests test.
+]]>
+            </help>
+    </entry>
+    <entry name="ADDITIONAL_GENERATE_KEY_PAIR_TESTS" type="PIVKeyCryptographicMechanismList">
+      <display_name>Additional Generate Key Pair Tests</display_name>
+      <help>
+        <![CDATA[Additional key/cryptographicMechanism combinations to test with the generate asymmetric key pair command.
+        These combinations are supplied to the VERIFY_addtional_generate_key_pair_tests tests.]]>
+            </help>
+    </entry>
+    <group name="keytypealgorithmkeys" visible="true" editable="true">
+      <display_name>KeyType-Algorithm Keys</display_name>
+      <!-- key 9A -->
+      <entry name="KEY_9A_05" type="X509Certificate">
+        <help><![CDATA[PIV Authentication Key for algorithm RSA 3072]]>        </help>
+      </entry>
+      <entry name="KEY_9A_06" type="X509Certificate">
+        <help><![CDATA[PIV Authentication Key for algorithm RSA 1024]]>        </help>
+      </entry>
+      <entry name="KEY_9A_07" type="X509Certificate">
+        <help><![CDATA[PIV Authentication Key for algorithm RSA 2048]]>        </help>
+      </entry>
+      <entry name="KEY_9A_0E" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC P-224]]>        </help>
+      </entry>
+      <entry name="KEY_9A_0F" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC K-233]]>        </help>
+      </entry>
+      <entry name="KEY_9A_10" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC B-233]]>        </help>
+      </entry>
+      <entry name="KEY_9A_11" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC P-256]]>        </help>
+      </entry>
+      <entry name="KEY_9A_12" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC K-283]]>        </help>
+      </entry>
+      <entry name="KEY_9A_13" type="HexString">
+        <help><![CDATA[PIV Authentication Key for algorithm ECC B-283]]>        </help>
+      </entry>
+      <!-- key 9B -->
+      <entry name="KEY_9B_00" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key with default algorithm. Default algorithm should match KEY_9B_03 value]]>        </help>
+      </entry>
+      <entry name="KEY_9B_01" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm 2 Key Triple DES-ECB, 128 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9B_02" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm 2 Key Triple DES-CBC, 128 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9B_03" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm 3 Key Triple DES-ECB, 192 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9B_04" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm 3 Key Triple DES-CBC, 192 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9B_08" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-128-ECB, 24 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9B_09" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-128-CBC, 24 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9B_0A" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-192-ECB, 36 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9B_0B" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-192-CBC, 36 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9B_0C" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-256-ECB, 48 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9B_0D" type="HexString">
+        <help><![CDATA[PIV Card Application Administration Key for algorithm AES-256-CBC, 48 bytes]]>        </help>
+      </entry>
+      <!-- key 9C -->
+      <entry name="KEY_9C_05" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm RSA 3072]]>        </help>
+      </entry>
+      <entry name="KEY_9C_06" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm RSA 1024]]>        </help>
+      </entry>
+      <entry name="KEY_9C_07" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm RSA 2048]]>        </help>
+      </entry>
+      <entry name="KEY_9C_0E" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC P-224]]>        </help>
+      </entry>
+      <entry name="KEY_9C_0F" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC K-233]]>        </help>
+      </entry>
+      <entry name="KEY_9C_10" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC B-233]]>        </help>
+      </entry>
+      <entry name="KEY_9C_11" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC P-256]]>        </help>
+      </entry>
+      <entry name="KEY_9C_12" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC K-283]]>        </help>
+      </entry>
+      <entry name="KEY_9C_13" type="HexString">
+        <help><![CDATA[PIV Card Application Digital Signature Key for algorithm ECC B-283]]>        </help>
+      </entry>
+      <!-- key 9D -->
+      <entry name="KEY_9D_05" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm RSA 3072]]>        </help>
+      </entry>
+      <entry name="KEY_9D_06" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm RSA 1024]]>        </help>
+      </entry>
+      <entry name="KEY_9D_07" type="X509Certificate">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm RSA 2048]]>        </help>
+      </entry>
+      <entry name="KEY_9D_0E" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC P-224]]>        </help>
+      </entry>
+      <entry name="KEY_9D_0F" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC K-233]]>        </help>
+      </entry>
+      <entry name="KEY_9D_10" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC B-233]]>        </help>
+      </entry>
+      <entry name="KEY_9D_11" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC P-256]]>        </help>
+      </entry>
+      <entry name="KEY_9D_12" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC K-283]]>        </help>
+      </entry>
+      <entry name="KEY_9D_13" type="HexString">
+        <help><![CDATA[PIV Card Application Key Management Key for algorithm ECC B-283]]>        </help>
+      </entry>
+      <!-- key 9E -->
+      <entry name="KEY_9E_01" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm 2 Key Triple DES-ECB, 128 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9E_02" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm 2 Key Triple DES-CBC, 128 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9E_03" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm 3 Key Triple DES-ECB, 192 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9E_04" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm 3 Key Triple DES-CBC, 192 bits]]>        </help>
+      </entry>
+      <entry name="KEY_9E_05" type="X509Certificate">
+        <help><![CDATA[PIV Card Authentication Key for algorithm RSA 3072]]>        </help>
+      </entry>
+      <entry name="KEY_9E_06" type="X509Certificate">
+        <help><![CDATA[PIV Card Authentication Key for algorithm RSA 1024]]>        </help>
+      </entry>
+      <entry name="KEY_9E_07" type="X509Certificate">
+        <help><![CDATA[PIV Card Authentication Key for algorithm RSA 2048]]>        </help>
+      </entry>
+      <entry name="KEY_9E_08" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-128-ECB, 24 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_09" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-128-CBC, 24 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0A" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-192-ECB, 36 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0B" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-192-CBC, 36 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0C" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-256-ECB, 48 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0D" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm AES-256-CBC, 48 bytes]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0E" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC P-224]]>        </help>
+      </entry>
+      <entry name="KEY_9E_0F" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC K-233]]>        </help>
+      </entry>
+      <entry name="KEY_9E_10" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC B-233]]>        </help>
+      </entry>
+      <entry name="KEY_9E_11" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC P-256]]>        </help>
+      </entry>
+      <entry name="KEY_9E_12" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC K-283]]>        </help>
+      </entry>
+      <entry name="KEY_9E_13" type="HexString">
+        <help><![CDATA[PIV Card Authentication Key for algorithm ECC B-283]]>        </help>
+      </entry>
+    </group>
+    <group name="advanced" visible="false" editable="false">
+      <display_name>Advanced Settings</display_name>
+      <entry name="TestDriverJarPath" type="String">
+        <display_name>Test Driver JAR file location</display_name>
+        <default>com/tvec/smart_card/piv/apdu/test_drivers/contact</default>
+        <help><![CDATA[Location of test driver files inside the jar. Do not change.]]>        </help>
+      </entry>
+      <entry name="TestDriverPath" type="directory">
+        <display_name>Test Driver file system location</display_name>
+        <help><![CDATA[Location of test driver files. Leave this field blank to use included test drivers.]]>        </help>
+      </entry>
+      <entry name="PluginClass" type="String">
+        <display_name>Plugin Class</display_name>
+        <default>com.tvec.smart_card.piv.apdu.TestRunnerPlugin</default>
+        <help><![CDATA[API Plugin Name. Do not change.]]>        </help>
+      </entry>
+      <entry name="TestClassFactory" type="String">
+        <help>
+          <![CDATA[URI of TestClassFactory.
+          The test factory produces the correct class to use for a test.]]>
+                </help>
+        <default>com.tvec.smart_card.piv.apdu.tests.TestClassFactory</default>
+      </entry>
+      <entry name="TestManagerModifications" type="TestManagerModifications">
+        <default type="fragment">
+          <modifications>
+            <modification subsystem="CHECK_attempts_remaining" testnumber="3" type="warning">
+              <message><![CDATA[CHECK_attempts_remaining test 3 can potentially place the card in a permanently blocked state.]]>              </message>
+            </modification>
+          </modifications>
+        </default>
+      </entry>
+    </group>
+    <group name="output">
+      <display_name>Output Locations</display_name>
+      <entry name="TestLogPath" type="directory">
+        <display_name>Log Path</display_name>
+        <help><![CDATA[Location to store log files.]]>        </help>
+        <default>.\apdu_tests_contact\logs</default>
+      </entry>
+      <entry name="TestResultPath" type="directory">
+        <display_name>Result Path</display_name>
+        <help><![CDATA[Location to store result files of tests.]]>        </help>
+        <default>.\apdu_tests_contact\results</default>
+      </entry>
+    </group>
+  </group>
+</format>
+

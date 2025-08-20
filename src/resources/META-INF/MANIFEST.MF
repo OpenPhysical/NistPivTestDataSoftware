@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: bcprov-jdk15-132.jar bcmail-jdk15-132.jar tvec_utility.jar
+Built-By: Chris
+Created-By: 1.5.0_06-b05 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.6.5
+Main-Class: gov.nist.piv.PersoUI
+Implementation-Version: 1.0.3
+

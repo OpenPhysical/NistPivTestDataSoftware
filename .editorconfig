@@ -1,0 +1,36 @@
+# top-level EditorConfig
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 120
+
+# Java source, Gradle, Groovy
+[*.{java,gradle,groovy}]
+indent_style = space
+indent_size = 4
+
+# XML, JSON, YAML, Markdown, TOML
+[*.{xml,json,toml,yml,yaml,md}]
+indent_style = space
+indent_size = 2
+
+# Do not strip trailing spaces in Markdown (used for hard line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# Makefiles must use tabs
+[Makefile]
+indent_style = tab
+
+# Windows batch files typically use CRLF
+[*.bat]
+end_of_line = crlf

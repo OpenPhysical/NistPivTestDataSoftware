@@ -1,0 +1,171 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'distribution'
+    id 'com.diffplug.spotless' version '7.2.1'
+}
+
+group = 'gov.nist.piv'
+version = '2.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Modern BouncyCastle dependencies (replacing ancient 2007 versions)
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.81'
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.81'
+    implementation 'org.bouncycastle:bcutil-jdk18on:1.81'
+    
+    // Logging dependencies
+    implementation 'org.apache.logging.log4j:log4j-core:2.25.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.25.1'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.25.1'
+    
+    // Test dependencies
+    testImplementation 'junit:junit:4.13.2'
+}
+
+application {
+    mainClass = 'gov.nist.piv.PersoUI'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/sources']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:unchecked', '-Xlint:deprecation']
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes(
+            'Main-Class': 'gov.nist.piv.PersoUI',
+            'Implementation-Title': 'NIST PIV Test Data Generator - Modernized',
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'NIST (Modernized)',
+            'Created-By': 'Gradle ' + gradle.gradleVersion
+        )
+    }
+    
+    archiveBaseName = 'jpiv-test-data-generator'
+    archiveVersion = project.version
+}
+
+// Create a fat JAR with all dependencies
+task fatJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes(
+            'Main-Class': 'gov.nist.piv.PersoUI',
+            'Implementation-Title': 'NIST PIV Test Data Generator - Modernized',
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'NIST (Modernized)',
+            'Created-By': 'Gradle ' + gradle.gradleVersion
+        )
+    }
+    
+    archiveBaseName = 'jpiv-test-data-generator-fat'
+    archiveVersion = project.version
+    
+    from (configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }) {
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    }
+    with jar
+}
+
+// Task to run the application
+task runJpiv(type: JavaExec) {
+    group = 'application'
+    description = 'Run JPIV Test Data Generator'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'gov.nist.piv.PersoUI'
+}
+
+// Enhanced clean task
+clean {
+    delete 'modernized'
+    delete 'generated_data'
+    delete 'logs'
+    delete fileTree('.') {
+        include '*.class'
+        include 'ScrollTestApp*'
+        include '*.tmp'
+        include '*.log'
+    }
+    delete '.gradle'
+    println "Cleaned build artifacts, generated data, logs, and temporary files"
+}
+
+// Distribution configuration
+distributions {
+    main {
+        distributionBaseName = 'nist-piv-test-data-generator'
+        contents {
+            from jar
+            from fatJar
+            from(project.projectDir) {
+                include 'docs/**'
+                include 'extra_files/**'
+                include 'LICENSE.md'
+                include 'run-jpiv.sh'
+                include 'run-piv-loader.sh'
+                include 'run-piv-tools.bat'
+                include 'Makefile'
+            }
+            into('bin') {
+                from 'Binaries'
+            }
+        }
+    }
+}
+
+// Custom task to show build info
+task buildInfo {
+    doLast {
+        println "NIST PIV Test Data Generator v${project.version}"
+        println "==============================================="
+        println "Java Compatibility: ${java.sourceCompatibility}+"
+        println "BouncyCastle: 1.81 (2024)"
+        println "Log4j2: 2.25.1 (2024)"
+        println "Main Class: ${application.mainClass.get()}"
+        println "Distribution: ${distributions.main.distributionBaseName}-${project.version}"
+    }
+}
+
+build.dependsOn buildInfo
+
+// Spotless code formatting configuration
+spotless {
+    java {
+        target 'src/**/*.java'
+        
+        // Use Google Java Format
+        googleJavaFormat()
+        
+        // Remove unused imports and organize
+        removeUnusedImports()
+        
+        // Ensure files end with newline
+        endWithNewline()
+        
+        // Trim trailing whitespace
+        trimTrailingWhitespace()
+    }
+}
