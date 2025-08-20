@@ -48,7 +48,7 @@ This release represents a complete modernization from the original 2007 codebase
 
 1. **Clone and Build**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/OpenPhysical/NistPivTestDataSoftware.git
    cd PIV_Test_Data_Software
    ./gradlew build
    ```
@@ -201,9 +201,9 @@ This software was originally developed by the National Institute of Standards an
 
 ## Documentation
 
-- **[CHANGELOG.md](docs/CHANGELOG.md)** - Version history and changes
-- **[Original NIST Docs](docs/)** - PIV specifications and user guides
-- **[LICENSE](docs/LICENSE.md)** - Public domain and Unlicense terms
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
+- **[Original NIST Docs](./)** - PIV specifications and user guides
+- **[LICENSE](LICENSE.md)** - Public domain and Unlicense terms
 
 ## Contributing
 
@@ -224,7 +224,7 @@ This project preserves and modernizes historical NIST software for continued uti
 
 ## License
 
-This modernized version is released under the [Unlicense](docs/LICENSE.md) (public domain). The original NIST software remains in the public domain per U.S. federal law.
+This modernized version is released under the [Unlicense](LICENSE.md) (public domain). The original NIST software remains in the public domain per U.S. federal law.
 
 ---
 

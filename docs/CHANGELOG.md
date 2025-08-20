@@ -126,8 +126,8 @@ Users upgrading from the original 2007 version should:
 - **Fixed**: Bug fixes
 - **Security**: Security improvements
 
-[2.0.0]: https://github.com/your-repo/compare/v1.0.3...v2.0.0
-[1.0.3]: https://github.com/your-repo/releases/tag/v1.0.3
-[1.0.2]: https://github.com/your-repo/releases/tag/v1.0.2
-[1.0.1]: https://github.com/your-repo/releases/tag/v1.0.1
-[1.0.0]: https://github.com/your-repo/releases/tag/v1.0.0
+[2.0.0]: https://github.com/OpenPhysical/NistPivTestDataSoftware/compare/v1.0.3...v2.0.0
+[1.0.3]: https://github.com/OpenPhysical/NistPivTestDataSoftware/releases/tag/v1.0.3
+[1.0.2]: https://github.com/OpenPhysical/NistPivTestDataSoftware/releases/tag/v1.0.2
+[1.0.1]: https://github.com/OpenPhysical/NistPivTestDataSoftware/releases/tag/v1.0.1
+[1.0.0]: https://github.com/OpenPhysical/NistPivTestDataSoftware/releases/tag/v1.0.0
